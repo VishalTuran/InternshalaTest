@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ProgressBar
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_weight="3.5"
+            android:max="4"
+            android:progress="1"
+            android:progressBackgroundTint="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:text="1/4"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_16sdp"
+            android:gravity="start" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressLayout"
+        android:orientation="horizontal"
+        android:id="@+id/chooseFruitLayout"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:padding="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/Question"
+            android:layout_weight="2.5"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_16sdp"
+            android:gravity="end|center_vertical" />
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_30sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/round_shape"
+                android:src="@drawable/ic_volume_up_black_24dp"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nextButton"
+        android:id="@+id/fruitRecyclerView"
+        android:layout_below="@+id/chooseFruitLayout"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_10sdp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/nextButton"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textColor="@android:color/white"
+        android:text="Next"
+        android:fontFamily="@font/montserrat"
+        android:background="@color/colorAccent"
+        android:layout_marginRight="@dimen/_10sdp"/>
+
+
+
+
+</RelativeLayout>
